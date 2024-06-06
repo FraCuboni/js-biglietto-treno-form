@@ -3,72 +3,63 @@ const nameInput = document.querySelector(".nameinput");
 const kmInput = document.querySelector(".kminput");
 const ageInput = document.querySelector(".ageinput");
 
-
-
 // button
 const sendButton = document.querySelector(".sendbutton");
+const resetButton = document.querySelector(".resetbutton");
+
+// costanti km & sconti
+const priceForKm = 0.21;
+const sale18 = 0.80;
+const sale65 = 0.60;
 
 
 // interaz utente
 sendButton.addEventListener("click",
 
-    function(){
+    function(event){
+        event.preventDefault();
+
+        // do i valori alle
         let nameValue = nameInput.value;
         let kmValue = parseInt(kmInput.value, 10);
         let ageValue = ageInput.value;
 
-        console.log("Nome inserito:", nameValue, kmValue, ageValue);
+        // calc prezzo
+        let price = kmValue * priceForKm;
 
+        if(ageValue==="minor"){
+            price = price * sale18;
+            
+        }else if(ageValue==="above 64"){
+            price = price * sale65;
 
+        }else{
+            price = price;
+        }
+
+        // output prezzo 
+        console.log(price);
+        document.getElementById('nameOutput').innerHTML = nameValue;
+        document.getElementById('ticketPrice').innerHTML = "Prezzo del biglietto: €" + price.toFixed(2);
         
+    }
+);
 
+
+  
+
+resetButton.addEventListener('click',
+
+    function(event){
+        event.preventDefault();
+
+        nameInput.value = "";
+        kmInput.value = "";
+        ageInput.value = "minor";
+        document.getElementById('nameOutput').innerHTML = "";
+        document.getElementById('ticketPrice').innerHTML = "";
 
     }
 );
 
 
-
-
-// stabilisco il prezzo al kilometro
-
-// stabilisco sconto under18
-
-
-// stabilisco sconto over65
-
-
-// chiedo il chilometraggio
-
-
-// chiedo l'età
-
-
-// calcolo se applicare sconti per l'età
-
-// if(etaUtente<18){
-
-//     prezzoKm = prezzoKm * sconto18;
-    
-    
-// }else if(etaUtente>=65){
-
-//     prezzoKm = prezzoKm * sconto65;
-    
-
-// }
-
-// console.log("Il prezzo dopo l'applicazione di eventuali sconti e privo di tagli di decimali è", prezzoKm);
-
-// // taglio i decimali in eccesso
-
-// let prezzoFinale = Math.round(prezzoKm * 100) / 100;
-
-// // Do il prezzo finale
-
-// console.log("Il prezzo finale è",prezzoFinale);
-    
-    
-    
-    
-    
-    

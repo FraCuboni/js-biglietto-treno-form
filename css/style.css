@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#nameOutput{
+    background-color: blue;
+    min-height: 2rem;
+    min-width: 3rem;
+}
+
+#saleOutput{
+    background-color: lightblue;
+    min-height: 2rem;
+    min-width: 3rem;}
+
+#coachOutput{
+    background-color: lightgreen;
+    min-height: 2rem;
+    min-width: 3rem;}
+
+#cpOutput{
+    background-color: darkblue;
+    min-height: 2rem;
+    min-width: 3rem;}
+
+#ticketPrice{
+    background-color: violet;
+    min-height: 2rem;
+    min-width: 3rem;}
+
