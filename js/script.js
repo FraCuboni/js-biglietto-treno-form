@@ -40,8 +40,11 @@ sendButton.addEventListener("click",
         // output prezzo 
         console.log(price);
         document.getElementById('nameOutput').innerHTML = nameValue;
+        document.getElementById('saleOutput').innerHTML = "Il tuo sconto è:" + price.toFixed(2);
+        document.getElementById('coachOutput').innerHTML = "il tuo vagone è il numero:" + price.toFixed(2);
+        document.getElementById('cpOutput').innerHTML = "codice cp:" + price.toFixed(2);
         document.getElementById('ticketPrice').innerHTML = "Prezzo del biglietto: €" + price.toFixed(2);
-        
+    
     }
 );
 
