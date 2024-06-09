@@ -23,7 +23,8 @@ sendButton.addEventListener("click",
         let nameValue = nameInput.value;
         let kmValue = parseInt(kmInput.value, 10);
         let ageValue = ageInput.value;
-        let cpCode = Math.floor(Math.random() * 10000)
+        let cpCode = Math.floor(Math.random() * 10000);
+        let coachNumber = Math.floor(Math.random() * 10) + 1;
 
         // calc prezzo
         let price = kmValue * priceForKm;
@@ -45,7 +46,7 @@ sendButton.addEventListener("click",
         console.log(price);
         document.getElementById('nameOutput').innerHTML = nameValue;
         document.getElementById('saleOutput').innerHTML = "Il tuo sconto è:" + AgeValue;
-        document.getElementById('coachOutput').innerHTML = "il tuo vagone è il numero:" + price.toFixed(2);
+        document.getElementById('coachOutput').innerHTML = coachNumber;
         document.getElementById('cpOutput').innerHTML = cpCode ;
         document.getElementById('ticketPrice').innerHTML = "Prezzo del biglietto: €" + price.toFixed(2);
     
@@ -64,6 +65,9 @@ resetButton.addEventListener('click',
         kmInput.value = "";
         ageInput.value = "minor";
         document.getElementById('nameOutput').innerHTML = "";
+        document.getElementById('saleOutput').innerHTML = "";
+        document.getElementById('coachOutput').innerHTML = "";
+        document.getElementById('cpOutput').innerHTML = "";
         document.getElementById('ticketPrice').innerHTML = "";
 
     }

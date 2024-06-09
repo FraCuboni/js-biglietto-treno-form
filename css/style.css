@@ -30,3 +30,23 @@
     min-height: 2rem;
     min-width: 3rem;}
 
+.container{
+    display: flex;
+    margin: 50px 100px;
+    background-color: lightskyblue;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.text>*, .buttons>*{
+    padding: 10px 10px 10px 5px;
+}
+.inputs>*{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    padding: 20px;
+
+}
